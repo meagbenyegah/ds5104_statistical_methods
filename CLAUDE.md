@@ -19,6 +19,12 @@ Science final assessment (Academic City University, Accra). Deadline:
   both parts (Shapiro-Wilk, t-tests, chi-square, ANOVA + Tukey HSD, OLS +
   VIF, logistic regression + odds ratios/ROC-AUC). Part B pulls
   `seaborn.load_dataset("tips")` directly, no file needed.
+- `notebooks/DS5104_Final_Assessment_Solution.ipynb` — runnable notebook
+  version: same computations as `src/run_analysis.py`, interleaved with the
+  write-up from `docs/EXAM_ANSWERS.md` and a chart per question.
+- `requirements.txt` — pinned minimum versions for the analysis + notebook
+  tooling (pandas, numpy, scipy, statsmodels, scikit-learn, seaborn,
+  matplotlib, jupyter, nbformat, nbconvert, ipykernel).
 
 ## Progress
 
@@ -42,5 +48,8 @@ revisit age-based analysis, and offer a sensitivity re-run excluding it.
 ## Running the analysis
 
 ```bash
+pip install -r requirements.txt
 python3 src/run_analysis.py
+# or, for the notebook:
+jupyter nbconvert --to notebook --execute --inplace notebooks/DS5104_Final_Assessment_Solution.ipynb
 ```
