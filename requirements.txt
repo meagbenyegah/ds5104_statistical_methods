@@ -12,3 +12,6 @@ jupyter>=1.0
 nbformat>=5.10
 nbconvert>=7.16
 ipykernel>=6.29
+
+# PDF export (src/export_pdf.py) — also run `playwright install chromium` once
+playwright>=1.40

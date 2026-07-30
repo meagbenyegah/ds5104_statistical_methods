@@ -50,6 +50,21 @@ Both run against a relative `../data/fitpulse_health_dataset.csv` path, so
 run them from `notebooks/`'s working directory as Jupyter sets it (i.e. don't
 move the notebook file without adjusting the path).
 
+## Export the notebook to PDF
+
+This environment has no LaTeX distribution, so PDF export goes through
+headless Chromium (via Playwright) instead of nbconvert's default `--to pdf`.
+One-time setup, then re-run any time the notebook changes:
+
+```bash
+playwright install chromium   # downloads the browser binary, ~250MB
+python3 src/export_pdf.py
+```
+
+Writes `notebooks/DS5104_Final_Assessment_Solution.pdf` — code cells are
+hidden; it contains only the questions, hypotheses, computed results/tables,
+charts, formulas, and interpretations.
+
 ## Project structure
 
 - `docs/FINAL_EXAMS_STAT_METHODS_DATA_SCIENCE_26_IGIT.{md,pdf}` — the exam brief.
@@ -58,6 +73,7 @@ move the notebook file without adjusting the path).
 - `data/fitpulse_health_dataset.csv` — Part A dataset (1000 rows).
 - `src/run_analysis.py` — reproducible analysis script.
 - `notebooks/DS5104_Final_Assessment_Solution.ipynb` — runnable notebook version with charts.
+- `src/export_pdf.py` — renders the notebook to `notebooks/DS5104_Final_Assessment_Solution.pdf`.
 - `requirements.txt` — pinned dependency versions.
 
 See `CLAUDE.md` for current progress status and a known data-quality issue in
